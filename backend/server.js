@@ -9,9 +9,8 @@ app.use(cors());
 app.use(express.json());
 
 // Configuración de la conexión a MySQL
-// NOTA: Usamos 'mysql-db' que es el nombre del contenedor de la base de datos
 const db = mysql.createConnection({
-  host: 'mysql-db', // ← ¡ESTA ES LA COMUNICACIÓN ENTRE CONTENEDORES!
+  host: 'mysql-db', 
   user: 'root',
   password: 'password',
   database: 'todolist'
@@ -55,4 +54,5 @@ app.post('/tasks', (req, res) => {
 
 app.listen(port, '0.0.0.0', () => {
   console.log(`Servidor backend ejecutándose en http://localhost:${port}`);
+
 });
